@@ -79,6 +79,7 @@ modules = [
     "gelbooru_v02",
     "girlsreleased",
     "girlswithmuscle",
+    "giphy",
     "gofile",
     "hatenablog",
     "hdoujin",

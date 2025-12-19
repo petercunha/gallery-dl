@@ -1383,9 +1383,14 @@ Consider all listed sites to potentially be NSFW.
     <td>Artists, Artist Searches, Favorites, Pools, Popular Images, Posts, Tag Searches</td>
     <td>Supported</td>
 </tr>
-
 <tr id="gelbooru_v01" title="gelbooru_v01">
     <td colspan="4"><strong>Gelbooru Beta 0.1.11</strong></td>
+</tr>
+<tr id="giphy" title="giphy">
+    <td>Giphy</td>
+    <td>https://giphy.com/</td>
+    <td>Searches</td>
+    <td>Supported</td>
 </tr>
 <tr id="thecollection" title="thecollection">
     <td>The /co/llection</td>
