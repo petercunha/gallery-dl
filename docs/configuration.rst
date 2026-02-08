@@ -7386,6 +7386,23 @@ Description
     by explicitly setting this option to ``null``.
 
 
+downloader.http.downloader
+--------------------------
+Type
+    ``string``
+Default
+    ``null``
+Example
+    ``"aria2c"``
+Description
+    Select an alternative downloader for HTTP/HTTPS URLs.
+
+    When set to ``null`` or not specified, the built-in HTTP downloader is used.
+    When set to ``"aria2c"``, the aria2c external downloader is used instead.
+
+    See `downloader.aria2c.*`_ options for aria2c-specific configuration.
+
+
 downloader.http.adjust-extensions
 ---------------------------------
 Type
@@ -7649,6 +7666,117 @@ Description
     /
     `youtube-dl's docstrings <https://github.com/ytdl-org/youtube-dl/blob/0153b387e57e0bb8e580f1869f85596d2767fb0d/youtube_dl/YoutubeDL.py#L157>`__
 
+
+downloader.aria2c.args
+----------------------
+Type
+    * ``string``
+    * ``list`` of ``strings``
+Example
+    * ``"--max-concurrent-downloads=5 --split=10"``
+    * ``["--max-concurrent-downloads=5", "--split=10"]``
+Description
+    Additional command-line arguments passed to aria2c.
+
+    See `aria2c options <https://aria2.github.io/manual/en/html/aria2c.html#options>`__
+
+
+downloader.aria2c.cookies
+-------------------------
+Type
+    ``bool``
+Default
+    ``true``
+Description
+    Forward gallery-dl's cookies to aria2c via the ``Cookie`` header.
+
+
+downloader.aria2c.enabled
+-------------------------
+Type
+    ``bool``
+Default
+    ``true``
+Description
+    Enable/disable the aria2c downloader.
+
+
+downloader.aria2c.exe
+---------------------
+Type
+    ``string``
+Default
+    ``"aria2c"``
+Description
+    Name or path of the aria2c executable.
+
+
+downloader.aria2c.headers
+-------------------------
+Type
+    ``object`` (`name` → `value`)
+Example
+    ``{"Accept": "image/webp,*/*", "Referer": "https://example.org/"}``
+Description
+    Additional HTTP headers to send when downloading files with aria2c.
+
+
+downloader.aria2c.mtime
+-----------------------
+Type
+    ``bool``
+Default
+    ``true``
+Description
+    Set the file modification time based on the ``Last-Modified`` HTTP header.
+
+
+downloader.aria2c.rate
+------------------------
+Type
+    * ``integer``
+    * ``string``
+Example
+    * ``1000000``
+    * ``"1M"``
+    * ``"500K"``
+Description
+    Maximum download rate in bytes per second.
+
+    Can be specified as an integer (bytes per second) or a string
+    with optional ``K``, ``M``, or ``G`` suffix (case-insensitive).
+
+
+downloader.aria2c.retries
+---------------------------
+Type
+    ``integer``
+Default
+    `downloader.*.retries`_
+Description
+    Maximum number of retries for aria2c downloads.
+
+    Set to ``-1`` for infinite retries.
+
+
+downloader.aria2c.timeout
+-------------------------
+Type
+    ``float``
+Default
+    `downloader.*.timeout`_
+Description
+    Connection timeout in seconds for aria2c downloads.
+
+
+downloader.aria2c.verify
+--------------------------
+Type
+    ``bool``
+Default
+    `downloader.*.verify`_
+Description
+    Verify SSL certificates during downloads.
 
 
 Output Options

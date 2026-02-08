@@ -562,7 +562,12 @@ class DownloadJob(Job):
         except KeyError:
             pass
 
-        cls = downloader.find(scheme)
+        # Check for alternative downloader selection for http/https
+        downloader_type = None
+        if scheme in ("http", "https"):
+            downloader_type = config.get(("downloader", "http"), "downloader")
+
+        cls = downloader.find(scheme, downloader_type)
         if cls and config.get(("downloader", cls.scheme), "enabled", True):
             instance = cls(self)
         else:
